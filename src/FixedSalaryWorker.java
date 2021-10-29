@@ -61,5 +61,10 @@ public class FixedSalaryWorker implements Comparable <FixedSalaryWorker>{
             return -1;
         }
     }
+    /*@Override
+    public int compareTo(FixedSalaryWorker comparesto){
+        double compareSalary = ((FixedSalaryWorker)comparesto).getSalary();
+        return (Double)(this.salary-compareSalary);
 
+    }*/
 }
