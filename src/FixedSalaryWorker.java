@@ -1,6 +1,6 @@
 import java.util.Comparator;
 
-public class FixedSalaryWorker implements Comparable {
+public class FixedSalaryWorker implements Comparable <FixedSalaryWorker>{
 
     private int id;
     private String name;
@@ -47,19 +47,19 @@ public class FixedSalaryWorker implements Comparable {
     }
 
     @Override
-    public double compareTo(FixedSalaryWorker comparestu) {
-        double compareSalary = ((FixedSalaryWorker) comparestu).getSalary();
-        /* For Ascending order*/
-        return this.salary - compareSalary;
-    }
-
-    @Override
     public String toString() {
         return "[ id=" + id + ", name=" + name + ", Last Name=" + lastName + ", Salary="+ salary +"]";
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(FixedSalaryWorker workersTo) {
+        if (this.salary == workersTo.getSalary()) {
+            return 0;
+        } else if (this.salary > workersTo.getSalary()) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
+
 }

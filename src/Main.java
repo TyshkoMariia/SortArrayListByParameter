@@ -31,9 +31,9 @@ public class Main {
 
         Collections.sort(fixedSalaryWorkerList);
 
-        for(FixedSalaryWorker sortedList: fixedSalaryWorkerList){
-            System.out.println(sortedList);
-        }
+        //for(FixedSalaryWorker sortedList: fixedSalaryWorkerList){
+            System.out.println(fixedSalaryWorkerList);
+        //}
 
     }
 }
