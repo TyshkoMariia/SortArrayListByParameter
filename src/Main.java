@@ -27,16 +27,9 @@ public class Main {
         fixedSalaryWorkerList.add(den);
         fixedSalaryWorkerList.add(frank);
 
-        /*Collections.sort(fixedSalaryWorkerList);
-        fixedSalaryWorkerList.stream().forEach(result -> System.out.println(result));*/
+        Collections.sort(fixedSalaryWorkerList);//, new Comparator() {
 
-        //for(FixedSalaryWorker sortedList: fixedSalaryWorkerList){
-           // System.out.println(fixedSalaryWorkerList);
-        //}
-
-        Collections.sort(fixedSalaryWorkerList, new Comparator() {
-
-                public int compare(Object o1, Object o2) {
+               /*public int compare(Object o1, Object o2) {
 
                 Double salaryOne = ((FixedSalaryWorker) o1).getSalary();
                 Double salaryTwo = ((FixedSalaryWorker) o2).getSalary();
@@ -50,7 +43,11 @@ public class Main {
                 String lastNameTwo = ((FixedSalaryWorker) o2).getLastName();
                 return lastNameOne.compareTo(lastNameTwo);
             }
-        });
+        });*/
+
+        System.out.println();
+        System.out.println("Sorter list of fixed salary workers by salary and last name descending");
+        System.out.println();
         fixedSalaryWorkerList.stream().forEach(result -> System.out.println(result));
         System.out.println();
         System.out.println("The first five workers from the list");
@@ -64,6 +61,39 @@ public class Main {
         for (int j=fixedSalaryWorkerList.size()-3; j<=fixedSalaryWorkerList.size()-1; j++){
             System.out.println(fixedSalaryWorkerList.get(j).getId());
         }
+
+        HourlySalaryWorker calculateHourlySalary = new HourlySalaryWorker();
+        List<HourlySalaryWorker> hourlySalaryWorkerList = new ArrayList<HourlySalaryWorker>();
+
+        HourlySalaryWorker rob = new HourlySalaryWorker(20, "Rob", "Roy", calculateHourlySalary.getCalculatedSalary(6, 122.15));
+        HourlySalaryWorker kalin = new HourlySalaryWorker(18, "Kalin", "Johnson",calculateHourlySalary.getCalculatedSalary(3, 140));
+        HourlySalaryWorker melvin = new HourlySalaryWorker(19, "Melvin", "Prestly", calculateHourlySalary.getCalculatedSalary(6, 122.15));
+        HourlySalaryWorker joshua = new HourlySalaryWorker(14, "Joshua", "Robinson", calculateHourlySalary.getCalculatedSalary(8, 240.56));
+        HourlySalaryWorker emma = new HourlySalaryWorker(17, "Emma", "White", calculateHourlySalary.getCalculatedSalary(10, 122.15));
+        HourlySalaryWorker lenny = new HourlySalaryWorker(11, "Lenny", "Krawitch",calculateHourlySalary.getCalculatedSalary(8, 240.56));
+        HourlySalaryWorker orwell = new HourlySalaryWorker(13, "Orwell", "McKinley", calculateHourlySalary.getCalculatedSalary(8, 240.56));
+        HourlySalaryWorker sunny = new HourlySalaryWorker(12, "Sunny", "Lane", calculateHourlySalary.getCalculatedSalary(10, 122.15));
+        HourlySalaryWorker ronald = new HourlySalaryWorker(15, "Ronald", "Quack", calculateHourlySalary.getCalculatedSalary(10, 122.15));
+        HourlySalaryWorker donald = new HourlySalaryWorker(16, "Donald", "Duck", calculateHourlySalary.getCalculatedSalary(6, 122.15));
+
+        hourlySalaryWorkerList.add(rob);
+        hourlySalaryWorkerList.add(kalin);
+        hourlySalaryWorkerList.add(melvin);
+        hourlySalaryWorkerList.add(joshua);
+        hourlySalaryWorkerList.add(emma);
+        hourlySalaryWorkerList.add(lenny);
+        hourlySalaryWorkerList.add(orwell);
+        hourlySalaryWorkerList.add(sunny);
+        hourlySalaryWorkerList.add(ronald);
+        hourlySalaryWorkerList.add(donald);
+
+        Collections.sort(hourlySalaryWorkerList);
+        System.out.println();
+        System.out.println("Sorter list of hourly salary workers by salary and last name descending");
+        System.out.println();
+        hourlySalaryWorkerList.stream().forEach(result -> System.out.println(result));
+        System.out.println();
+
 
     }
 }
