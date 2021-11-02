@@ -34,7 +34,7 @@ public class Main {
            // System.out.println(fixedSalaryWorkerList);
         //}
 
-        Collections.sort(fixedSalaryWorkerList, new Comparator() {
+        Collections.sort(fixedSalaryWorkerList, new Comparator() { //remove comparator
 
                 public int compare(Object o1, Object o2) {
 
