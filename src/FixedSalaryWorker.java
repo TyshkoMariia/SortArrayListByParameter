@@ -1,5 +1,3 @@
-import java.util.Comparator;
-
 public class FixedSalaryWorker implements Comparable <FixedSalaryWorker>{
 
     private int id;
@@ -54,17 +52,11 @@ public class FixedSalaryWorker implements Comparable <FixedSalaryWorker>{
     @Override
     public int compareTo(FixedSalaryWorker workersTo) {
         if (this.salary == workersTo.getSalary()) {
-            return 0;
+            return this.lastName.compareTo(workersTo.lastName);
         } else if (this.salary > workersTo.getSalary()) {
             return 1;
         } else {
             return -1;
         }
     }
-    /*@Override
-    public int compareTo(FixedSalaryWorker comparesto){
-        double compareSalary = ((FixedSalaryWorker)comparesto).getSalary();
-        return (Double)(this.salary-compareSalary);
-
-    }*/
 }
